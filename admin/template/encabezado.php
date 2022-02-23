@@ -11,13 +11,15 @@
   </head>
   <body>
 
+<?php $url="http://".$_SERVER['HTTP_HOST']."/empweb" ?>
+
 <nav class="navbar navbar-expand navbar-light bg-light">
     <div class="nav navbar-nav">
         <a class="nav-item nav-link active" href="#">Administrador del Sitio <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="#">Inicio</a>
-        <a class="nav-item nav-link" href="#">Productos</a>
-        <a class="nav-item nav-link" href="#">Cerrar</a>
-        <a class="nav-item nav-link" href="#">Ver Sitio Web</a>
+        <a class="nav-item nav-link" href="<?php echo $url;?>/admin/inicio.php">Inicio</a>
+        <a class="nav-item nav-link" href="<?php echo $url;?>/admin/seccion/productos.php">Productos</a>
+        <a class="nav-item nav-link" href="<?php echo $url;?>/admin/seccion/cerrar.php"">Cerrar</a>
+        <a class="nav-item nav-link" href="<?php echo $url; ?>">Ver Sitio Web</a>
 
     </div>
 </nav>
