@@ -24,6 +24,11 @@
     <label for="txtCanti">Cantidad:</label>
     <input type="text" class="form-control" name="txtCanti" id="txtCanti"  placeholder="Ingrese Cantidad Producto">
     </div>
+
+    <div class = "form-group">
+    <label for="txtPrecioV">Precio de Venta:</label>
+    <input type="text" class="form-control" name="txtPrecioV" id="txtPrecioV"  placeholder="Ingrese Precio Venta">
+    </div>
     
 <div class="btn-group" role="group" aria-label="">
     <button type="button" class="btn btn-success">Agregar</button>
@@ -45,6 +50,31 @@
 
 <div class="col-md-7">
     Tabla de Productos (Mostrar datos de productos)
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID Producto</th>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Preciode Venta</th>
+            <th>Acciones</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2</td>
+            <td>Libro</td>
+            <td>15</td>
+            <td>$150</td>
+
+            <td>Seleccionar | Borrar</td>            
+        </tr>
+       
+    </tbody>
+</table>
+
 </div>
 
 <?php include("../template/pie.php")?>
