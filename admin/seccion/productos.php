@@ -1,39 +1,7 @@
 <?php include("../template/encabezado.php")?>
 
 <?php
-
-$txtId=(isset($_POST['txtId']))?$_POST['txtId']:"";
-
-$txtNombre=(isset($_POST['txtNombre']))?$_POST['txtNombre']:"";
-
-$txtCanti=(isset($_POST['txtCanti']))?$_POST['txtCanti']:"";
-
-$txtPrecioV=(isset($_POST['txtPrecioV']))?$_POST['txtPrecioV']:"";
-
-$accion=(isset($_POST['accion']))?$_POST['accion']:"";
-
-echo $txtId."<br/>";
-echo $txtNombre."<br/>";
-echo $txtCanti."<br/>";
-echo $txtPrecioV."<br/>";
-echo $accion."<br/>";
-
-switch ($accion){
-
-        case "Agregar";
-            echo "Presiona boton para Agregar";
-            break;
-
-        case "Modificar";
-            echo "Presiona boton para Agregar";
-            break;
-
-        case "Cancelar";
-            echo "Presiona boton para Agregar";
-            break;
-
-}
-
+print_r($_POST);
 ?>
 
 <div class="col-md-5">
@@ -75,7 +43,7 @@ switch ($accion){
             </div>
     
 
-    </form>
+            </form>
 
         </div>
         
