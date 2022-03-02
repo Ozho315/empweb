@@ -1,5 +1,10 @@
 <?php include("../template/encabezado.php")?>
 
+<?php
+print_r($_POST);
+
+?>
+
 <div class="col-md-5">
     Formulario Nuevos    Productos
     <br/><br/>
@@ -30,11 +35,12 @@
     <input type="text" class="form-control" name="txtPrecioV" id="txtPrecioV"  placeholder="Ingrese Precio Venta">
     </div>
     
-<div class="btn-group" role="group" aria-label="">
-    <button type="button" class="btn btn-success">Agregar</button>
-    <button type="button" class="btn btn-warning">Modificar</button>
-    <button type="button" class="btn btn-info">Cancelar</button>
-</div>
+    <div class="btn-group" role="group" aria-label="">
+    <button type="button" name="accion" value="Agregar" class="btn btn-success">Agregar</button>
+    <button type="button" name="accion" value="Modificar" class="btn btn-warning">Modificar</button>
+    <button type="button" name="accion" value="Cancelar" class="btn btn-info">Cancelar</button>
+    
+    </div>
     
 
     </form>
