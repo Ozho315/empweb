@@ -1,7 +1,41 @@
 <?php include("../template/encabezado.php")?>
 
 <?php
-print_r($_POST);
+
+$txtId=(isset($_POST['txtId']))?$_POST['txtId']:"";
+$txtNombre=(isset($_POST['txtNombre']))?$_POST['txtNombre']:"";
+$txtCanti=(isset($_POST['txtCanti']))?$_POST['txtCanti']:"";
+$txtPrecioV=(isset($_POST['txtPrecioV']))?$_POST['txtPrecioV']:"";
+$accion=(isset($_POST['accion']))?$_POST['accion']:"";
+
+include("../config/bdd.php");
+
+//Acciones Botones
+switch ($accion){
+
+        case "Agregar";
+            $sentenciaSQL=$conexion->prepare("INSERT INTO tbl_productos (nombre_prod, canti_prod, precio_prod) VALUES (:nombre_prod, :canti_prod, :precio_prod);");
+            $sentenciaSQL->bindParam('nombre_prod',$txtNombre);
+            $sentenciaSQL->bindParam('canti_prod',$txtCanti);
+            $sentenciaSQL->bindParam('precio_prod',$txtPrecioV);
+            $sentenciaSQL->execute();
+        break;
+
+        case "Modificar";
+            echo "Presiona boton para Modificar";
+        break;
+
+        case "Cancelar";
+            echo "Presiona boton para Cancelar";
+            break;
+
+}
+
+//MOSTRAR REGISTRO
+$sentenciaSQL=$conexion->prepare("SELECT * FROM tbl_productos");
+$sentenciaSQL->execute();
+$listaProductos=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <div class="col-md-5">
@@ -13,7 +47,6 @@ print_r($_POST);
         </div>
 
         <div class="card-body">
-           
             <form method="POST" enctype="multipart/formdata">
 
         <div class = "form-group">
@@ -37,9 +70,9 @@ print_r($_POST);
         </div>
     
             <div class="btn-group" role="group" aria-label="">
-                <button type="button" name="accion" value="Agregar" class="btn btn-success">Agregar</button>
-                <button type="button" name="accion" value="Modificar" class="btn btn-warning">Modificar</button>
-                <button type="button" name="accion" value="Cancelar" class="btn btn-info">Cancelar</button>
+                <button type="submit" name="accion" value="Agregar" class="btn btn-success">Agregar</button>
+                <button type="submit" name="accion" value="Modificar" class="btn btn-warning">Modificar</button>
+                <button type="submit" name="accion" value="Cancelar" class="btn btn-info">Cancelar</button>
             </div>
     
 
@@ -65,15 +98,25 @@ print_r($_POST);
         </tr>
     </thead>
     <tbody>
+    <?php foreach($listaProductos as $tbl_productos){?>
         <tr>
-            <td>2</td>
-            <td>Libro</td>
-            <td>15</td>
-            <td>$150</td>
+            <td><?php echo $tbl_productos['id_prod']?></td>
+            <td><?php echo $tbl_productos['nombre_prod']?></td>
+            <td><?php echo $tbl_productos['canti_prod']?></td>
+            <td><?php echo $tbl_productos['precio_prod']?></td>
 
-            <td>Seleccionar | Borrar</td>            
+            <td>
+                Seleccionar | Borrar
+                <form method="post">
+                <input type="hidden" name="txtId" id="txtId" value="<?php echo $tbl_productos['id_prod'];?>">
+                <input type="submit" name="accion" value="Seleccionar" class="btn btn-primary"/>
+                <input type="submit" name="accion" value="Borrar" class="btn btn-danger"/>
+
+                </form>
+            </td>            
+
         </tr>
-       
+    <?php }?>
     </tbody>
 </table>
 

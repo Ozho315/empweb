@@ -18,8 +18,8 @@
         <a class="nav-item nav-link active" href="#">Administrador del Sitio <span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link" href="<?php echo $url;?>/admin/inicio.php">Inicio</a>
         <a class="nav-item nav-link" href="<?php echo $url;?>/admin/seccion/productos.php">Productos</a>
-        <a class="nav-item nav-link" href="<?php echo $url;?>/admin/seccion/cerrar.php"">Cerrar</a>
         <a class="nav-item nav-link" href="<?php echo $url; ?>">Ver Sitio Web</a>
+        <a class="nav-item nav-link" href="<?php echo $url;?>/admin/seccion/cerrar.php"">Cerrar</a>
 
     </div>
 </nav>
