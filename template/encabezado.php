@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +18,13 @@
             <li class="nav-item">
                 <a class="nav-link" href="productos.php">Productos</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="adminprod.php">Administrar Catalogo</a>
+                
+            </li>
         </ul>
+</br></br>
     </nav>
-
+</br></br>
      <div class="container">
         <div class="row">

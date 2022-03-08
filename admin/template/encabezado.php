@@ -1,7 +1,19 @@
+<?php
+
+session_start();
+if(!isset($_SESSION['user'])){
+  header("Location:../index.php");
+}else{
+
+  if($_SESSION['user']=="ok")
+    $nombreUser=$_SESSION["nombreUser"];
+}
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Titulo</title>
+    <title>Ingreso Productos</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,7 +31,7 @@
         <a class="nav-item nav-link" href="<?php echo $url;?>/admin/inicio.php">Inicio</a>
         <a class="nav-item nav-link" href="<?php echo $url;?>/admin/seccion/productos.php">Productos</a>
         <a class="nav-item nav-link" href="<?php echo $url; ?>">Ver Sitio Web</a>
-        <a class="nav-item nav-link" href="<?php echo $url;?>/admin/seccion/cerrar.php"">Cerrar</a>
+        <a class="nav-item nav-link" href="<?php echo $url;?>/admin/seccion/cerrar.php">Cerrar</a>
 
     </div>
 </nav>

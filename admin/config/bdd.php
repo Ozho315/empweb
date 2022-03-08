@@ -1,4 +1,5 @@
 <?php
+//Conexion con bdd
 $host="localhost";
 $bdd="emprendimiento";
 $usuario="root";
