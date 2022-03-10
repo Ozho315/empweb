@@ -54,7 +54,7 @@ switch ($accion){
 
             $txtNombre=$Producto['nombre_prod'];
             $txtCanti=$Producto['canti_prod'];
-            $txtPrecioV=$Producto['canti_prod'];
+            $txtPrecioV=$Producto['precio_prod'];
             
             break;
 
@@ -76,7 +76,7 @@ $listaProductos=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <div class="col-md-4">
-    Formulario Nuevos Productos
+    <b>Formulario Nuevos Productos</b>
     <br/><br/>
     <div class="card">
         <div class="card-header">
@@ -88,7 +88,7 @@ $listaProductos=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 
         <div class = "form-group">
         <label for="txtId">Id Producto:</label>
-        <input type="text" required readonly class="form-control" value="<?php echo $txtId; ?>" name="txtId" id="txtId"  placeholder="Ingrese Id Producto">
+        <input type="text" required readonly class="form-control" value="<?php echo $txtId; ?>" name="txtId" id="txtId"  >
         </div>
 
         <div class = "form-group">
@@ -123,10 +123,10 @@ $listaProductos=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 
 <div class="col-md-8">
     
-<table class="table table-bordered">
+<table class="table table-info table-hover table-bordered table-sm">
     <thead>
         <tr>
-            <th>ID Producto</th>
+           
             <th>Nombre</th>
             <th>Cantidad</th>
             <th>Preciode Venta</th>
@@ -137,7 +137,7 @@ $listaProductos=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
     <tbody>
     <?php foreach($listaProductos as $tbl_productos){?>
         <tr>
-            <td><?php echo $tbl_productos['id_prod']?></td>
+            
             <td><?php echo $tbl_productos['nombre_prod']?></td>
             <td><?php echo $tbl_productos['canti_prod']?></td>
             <td><?php echo $tbl_productos['precio_prod']?></td>

@@ -11,7 +11,6 @@ if($_POST){
 
 }
 ?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -46,23 +45,23 @@ if($_POST){
       </div>
     <?php }?>
 
-       <form method="POST">
+      <form method="POST">
 
-       <div class = "form-group">
-       <label >Usuario</label>
-       <input type="text" class="form-control" name="usuario" aria-describedby="emailHelp" placeholder="Ingrese email">
-       <small id="emailHelp" class="form-text text-muted">Nosotros con compartiremos su informacion personal a terceros</small>
-       </div>
+      <div class = "form-group">
+      <label >Usuario</label>
+      <input type="text" class="form-control" name="usuario" aria-describedby="emailHelp" placeholder="Ingrese email">
+      <small id="emailHelp" class="form-text text-muted">Nosotros con compartiremos su informacion personal a terceros</small>
+      </div>
 
-       <div class="form-group">
-       <label for="exampleInputPassword1">Contrasena</label>
-       <input type="password" class="form-control" name="contrasena" placeholder="Contrasena">
-       </div>
+      <div class="form-group">
+      <label for="exampleInputPassword1">Contrasena</label>
+      <input type="password" class="form-control" name="contrasena" placeholder="Contrasena">
+      </div>
       
-       <button type="submit" class="btn btn-primary">Ingresar</button>
-       </form>
-       
-       
+      <button type="submit" class="btn btn-primary">Ingresar</button>
+      </form>
+      
+      
     </div>
     
 </div>

@@ -20,7 +20,7 @@ $listaProductos=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
             <th>Nombre</th>
             <th>Cantidad</th>
             <th>Preciode Venta</th>
-           
+        
         </tr>
     </thead>
     <tbody>

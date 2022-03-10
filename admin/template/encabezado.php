@@ -13,7 +13,7 @@ if(!isset($_SESSION['user'])){
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Ingreso Productos</title>
+    <title>Ingreso Datos</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,15 +25,20 @@ if(!isset($_SESSION['user'])){
 
 <?php $url="http://".$_SERVER['HTTP_HOST']."/empweb" ?>
 
-<nav class="navbar navbar-expand navbar-light bg-light">
+<nav class="navbar navbar-expand navbar-light bg-light" id="navbarScroll">
+<div data-spy="scroll" data-target="navbarScroll" data-offset="0">
+<ul class="nav nav-pills">
     <div class="nav navbar-nav">
         <a class="nav-item nav-link active" href="#">Administrador del Sitio <span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link" href="<?php echo $url;?>/admin/inicio.php">Inicio</a>
         <a class="nav-item nav-link" href="<?php echo $url;?>/admin/seccion/productos.php">Productos</a>
+        <a class="nav-item nav-link" href="<?php echo $url;?>/admin/seccion/materiasp.php">Materias Primas</a>
         <a class="nav-item nav-link" href="<?php echo $url; ?>">Ver Sitio Web</a>
         <a class="nav-item nav-link" href="<?php echo $url;?>/admin/seccion/cerrar.php">Cerrar</a>
 
     </div>
+</ul>
+</div>
 </nav>
 
 
