@@ -73,13 +73,19 @@ $sentenciaSQL=$conexion->prepare("SELECT * FROM tbl_productos");
 $sentenciaSQL->execute();
 $listaProductos=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 
+//MOSTRAR REGSITRO MATERIAS PRIMAS
+
+$sentenciaSQL2=$conexion->prepare("SELECT nombre_mat FROM tbl_materiasp");
+$sentenciaSQL2->execute();
+$listaMaterias=$sentenciaSQL2->fetchAll(PDO::FETCH_BOTH);
+
 ?>
 
 <div class="col-md-4">
     <b>Formulario Nuevos Productos</b>
     <br/><br/>
     <div class="card">
-        <div class="card-header">
+        <div class="card-header ">
             Datos de Producto
         </div>
 
@@ -105,6 +111,28 @@ $listaProductos=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
         <label for="txtPrecioV">Precio de Venta:</label>
         <input type="text" required class="form-control" value="<?php echo $txtPrecioV; ?>" name="txtPrecioV" id="txtPrecioV"  placeholder="Ingrese Precio Venta">
         </div>  
+
+        <div class="form-group">
+        <label for="validationCustom04" class="form-label">Materia Prima</label></br>   
+        <select class="form-select" id="validationCustom04" required>
+        <option selected disable value="">Elegir opcion</option>
+        <option>
+
+        <?php foreach($listaMaterias as $tbl_materiasp){?>
+            <tr>
+            <td>
+                <?php 
+                    
+                    echo $tbl_materiasp[1];
+            
+                ?>
+            </td>
+            </tr>
+        <?php }?>
+
+        </option>
+        </select>
+        </div>
     
             <div class="btn-group" role="group" aria-label="">
                 <button type="submit" name="accion" <?php echo ($accion=="Seleccionar")?"disabled":""?> value="Agregar" class="btn btn-success">Agregar</button>
@@ -122,11 +150,13 @@ $listaProductos=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 <div class="col-md-8">
-    
+</br>
+</br>
+
 <table class="table table-info table-hover table-bordered table-sm">
     <thead>
         <tr>
-           
+        
             <th>Nombre</th>
             <th>Cantidad</th>
             <th>Preciode Venta</th>
@@ -148,7 +178,6 @@ $listaProductos=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
                 <input type="hidden" name="txtId" id="txtId" value="<?php echo $tbl_productos['id_prod'];?>"/>
                 <input type="submit" name="accion" value="Seleccionar" class="btn btn-primary"/>
                 <input type="submit" name="accion" value="Borrar" class="btn btn-danger"/>
-
                 </form>
             </td>            
 

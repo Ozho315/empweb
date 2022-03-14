@@ -121,7 +121,7 @@ $listaMateriasP=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 
         <div class = "form-group">
         <label for="txtPrecioV">Descripcion:</label>
-        <input type="text" required class="form-control" value="<?php echo $txtDescripcion; ?>" name="txtDescripcion" id="txtDescripcion"  placeholder="Ingrese Descripcion">
+        <textarea type="text" required class="form-control" value="<?php echo $txtDescripcion; ?>" name="txtDescripcion" id="txtDescripcion"  placeholder="Ingrese Descripcion"></textarea>
         </div>  
     
             <div class="btn-group" role="group" aria-label="">
@@ -141,7 +141,7 @@ $listaMateriasP=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 
 
 <div class="col-md-8" id="Tabla Materias">
-    
+</br></br>
 <table class="table table-info table-hover table-bordered table-sm">
     <thead>
         <tr>

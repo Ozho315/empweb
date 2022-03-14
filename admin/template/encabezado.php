@@ -25,7 +25,7 @@ if(!isset($_SESSION['user'])){
 
 <?php $url="http://".$_SERVER['HTTP_HOST']."/empweb" ?>
 
-<nav class="navbar navbar-expand navbar-light bg-light" id="navbarScroll">
+<nav class="navbar navbar-expand navbar-light " id="navbarScroll">
 <div data-spy="scroll" data-target="navbarScroll" data-offset="0">
 <ul class="nav nav-pills">
     <div class="nav navbar-nav">
@@ -40,9 +40,6 @@ if(!isset($_SESSION['user'])){
 </ul>
 </div>
 </nav>
-
-
-      
 <div class="container">
     <br/>
   <div class="row">
